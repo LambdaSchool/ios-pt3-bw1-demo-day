@@ -16,8 +16,8 @@ The video demo is for sharing your work on your portfolio, but it is also a fall
 
 ## Links (Add your links)
 
-* Code: `<insert Github repository link here>`
-* Trello/Github Project Kanban: `<insert trello board here>`
+* Code: `https://github.com/LambdaSchool/ios-pt3-bw1-medication-tracking-denis`
+* Trello/Github Project Kanban: `https://github.com/LambdaSchool/ios-pt3-bw1-medication-tracking-denis/projects/1`
 * Test Flight: `<insert beta signup link here>`
 * YouTube demo video: `<insert video url here>`
 
@@ -25,27 +25,34 @@ The video demo is for sharing your work on your portfolio, but it is also a fall
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+`My favorite feature to implement was the add and delete features. I enjoyed implemeting them because they were challenging and demonstrated that persistance worked within my app. They are also the two features the user is in controll of.`
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+`My number one obstacle was figuring out how to send information to the second tableView. I had to declare the variables being passed in the second tableViewController, then unwrapp them in updateViews and assignmed them to an array the tableView could call.`
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+    `func deleteMed(medication: Medication) {
+        let medName = medication.name
+        let medIndex = meds.firstIndex(where: {$0.name == medName})
+        meds.remove(at: medIndex!)
+        saveToPersistentStore()
+    } 
+    `
+    `I'm proud of this simple delete method because it took me a night to understand and complete and I didnt ask for help. The firstIndex(where:) function wasn't working with the parameters I was passing. I eventually found the index I was looking for by accessing it by its name. `
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+`This is an app that helps you see how many medications you have to take everyday and see what these medications are when you select a day of the week. You can add medications names and notes and delete them when you are done taking these medictions.`
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+`The number of feature is the ability to review what medications are taken on a daily basis.`
   
 6. What are you future goals?
 
-    `<Your answer here>`
+`I would like to implement more features like an editing function, date picker instead of a day picker, alert feature, daily/weekly frequency taken feature and populate information of the medication added to be displayed on the detail VC.`
 
 ## Required Slides (Add your Keynote to your PR)
 
