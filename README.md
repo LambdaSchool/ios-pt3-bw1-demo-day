@@ -16,7 +16,7 @@ The video demo is for sharing your work on your portfolio, but it is also a fall
 
 ## Links (Add your links)
 
-* Code: `<insert Github repository link here>`
+* Code:  https://github.com/LambdaSchool/ios-pt3-bw1-medication-tracking-christy
 * Trello/Github Project Kanban: `<insert trello board here>`
 * Test Flight: `<insert beta signup link here>`
 * YouTube demo video: `<insert video url here>`
@@ -29,7 +29,8 @@ The video demo is for sharing your work on your portfolio, but it is also a fall
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+Getting the picker view in the Edit View Controller to select the existing value.  
+(Add how this was fixed once you figure it out.)
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
@@ -37,15 +38,15 @@ The video demo is for sharing your work on your portfolio, but it is also a fall
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+Struggling to remember when to take your pills?  Pill Pal will keep track of all of your medications and supplements, and will remind you to take them regularly.
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+Alerts that remind the user to take their pills.
   
 6. What are you future goals?
 
-    `<Your answer here>`
+Ability to print medication/supplement lists for doctor visits.
 
 ## Required Slides (Add your Keynote to your PR)
 
