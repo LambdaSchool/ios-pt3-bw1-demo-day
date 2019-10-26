@@ -16,36 +16,43 @@ The video demo is for sharing your work on your portfolio, but it is also a fall
 
 ## Links (Add your links)
 
-* Code: `<insert Github repository link here>`
-* Trello/Github Project Kanban: `<insert trello board here>`
-* Test Flight: `<insert beta signup link here>`
-* YouTube demo video: `<insert video url here>`
+* Code: `https://github.com/LambdaSchool/ios-pt3-bw1-countdown-tracker-blake`
+* Trello/Github Project Kanban: `n/a`
+* Test Flight: `Waiting for email to setup`
+* YouTube demo video: `https://youtu.be/_kqG-nsXdyo`
 
 ## Questions (Answer indented below)
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+`Sorting by categories because I had completed the project without it and then had to go back. I loved that.`
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+`I was reloading the tableview data every second to keep the countdowns updating in real time but that caused a problem when trying to delete a countdown because it would reload faster than you could swipe. I now iterate over all visible cells and update their views. See below.`
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+    ```swift
+    _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        for cell in self.tableView.visibleCells {
+            guard let selectedCell = cell as? CountdownTableViewCell else {fatalError("Timer error!")}
+            selectedCell.updateViews()
+        }
+    }
+    ```
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+`You use this app to keep track of important events you don't want to miss.`
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+`Push notifications so that you don't have to check the app regularly.`
   
 6. What are you future goals?
 
-    `<Your answer here>`
+`Hide empty sections. Change how the sorting works based on user preference. Search bar. User defined categories.`
 
 ## Required Slides (Add your Keynote to your PR)
 
