@@ -25,27 +25,52 @@ The video demo is for sharing your work on your portfolio, but it is also a fall
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+    `<We really enjoyed getting the view controllers to communicate with each other.  That included some prepare for segues and delegates, and even adding a variable that we overlooked.  It was enjoyable because of how challenging it was, and the satisfaction that came from seeing it work!>`
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+    `<Tough to choose just one.  But I suppose we’d go with the issue we ran into with the keyboard blocking some of our text input fields.  We brainstormed how to fix it, and thought a scroll view would be best.  However, due to lack of time and familiarity we went with a simpler fix of changing the layout.  These are real world issues, and real world solutions.  Sometimes you just have to make something work to meet a deadline, and that is what we did here.>`
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+    `<From our LoanLibraryTableViewController:
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            switch segue.identifier {
+            case "ModifyLoanFromLibrarySegue":
+                    guard let loanCalculatorVC = segue.destination as? LoanCalculatorViewController else { fatalError() }
+                    loanCalculatorVC.delegate = self
+                    loanCalculatorVC.loanmodelcontroller = loanmodelcontroller
+            case "ShowLoanDetailSegue":
+                guard let loanDetailVC = segue.destination as? LoanDetailViewController,
+                    let loanmodelcontroller = loanmodelcontroller,
+                    let indexPath = tableView.indexPathForSelectedRow else { fatalError() }
+                loanDetailVC.loan = loanmodelcontroller.loans[indexPath.row]
+            default:
+                return
+            }
+        }
+        This bit of code had some real team work.  We both had a hand in it.  Craig got it got a 
+        good chunk of it done.  Gavin tried implementing the portion dealing with the 
+        “ShowLoanDetailSegue”, but got stuck at a point.  Craig was able to go in and take a look
+        and help solve it.  Part of the issue was that Gavin had commented out some code that
+        prevented him from appending the .loan.  Sometimes it takes a second set of eyes to
+        see the solution.>`
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+    `<To a 5 year old: 
+    “Do you like pushing buttons on a phone? Here!”*
+    *App not designed for a 5 year old
+    But honestly, to our target market:
+    “Would you sign on the dotted line of the first loan you were offered?  Our app helps you compare loans and make an educated decision.  It’s easy to overlook how much interest you pay over the entire life of the loan, and often it is tempting to minimize upfront costs and monthly payments; however, if you are able to see how many thousands of dollars that might cost you in the long-run, you may give it a second thought.  See clearly how something like $20 extra per month toward a home mortgage could save you several thousand dollars in additional interest.”>`
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+`<Our #1 feature has to be the ability to compare loans quickly and easily.  You get a quick snapshot in the LoanLibraryTableViewController, and can drill down for more details in the LoanDetailViewController.>`
   
 6. What are you future goals?
 
-    `<Your answer here>`
+`<Our goal is to help users make smart, informed decisions.  Based off of that, it’d be nice to have a feature to help show what loan amount you should seek (based off of credit score, income, zip code you live in (to estimate living costs), etc).  That way you can look at a car, a home, or whatever, within you budget.>`
 
 ## Required Slides (Add your Keynote to your PR)
 
