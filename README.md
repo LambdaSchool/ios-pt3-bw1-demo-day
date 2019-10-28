@@ -16,36 +16,38 @@ The video demo is for sharing your work on your portfolio, but it is also a fall
 
 ## Links (Add your links)
 
-* Code: `<insert Github repository link here>`
-* Trello/Github Project Kanban: `<insert trello board here>`
+* Code: https://github.com/LambdaSchool/ios-pt3-bw1-countdown-tracker-joseph
+* Trello/Github Project Kanban: https://github.com/LambdaSchool/ios-pt3-bw1-countdown-tracker-joseph/projects/1
 * Test Flight: `<insert beta signup link here>`
-* YouTube demo video: `<insert video url here>`
+* YouTube demo video: N/A
 
 ## Questions (Answer indented below)
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+    Really the whole thing. I had to completely overhaul the app at the last minute and I am happy with how to persistence is split away from the timer, and accessing deeper properties to fulfill the same task.
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+    the whole thing! I found that my original plan included multithreading and a lot of strong references that with my level of knowledge I could not complete in the time limit. 23 hours left on the clock and I had to rework everything from the ground up and a bit of refactoring!
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+    https://github.com/LambdaSchool/ios-pt3-bw1-countdown-tracker-joseph/blob/master/Countdown/Countdown/View%20Controllers/UserNoteInfoController.swift
+    
+    this was a very different controller using data that was split from the timer itself.
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+    this app is made to where you can write notes or stories and be sure you dont spend too much time, or spend just the right amount of time writing.
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+    The timer!
   
 6. What are you future goals?
 
-    `<Your answer here>`
+    timer persistence/live cell updates on saved timer state.
 
 ## Required Slides (Add your Keynote to your PR)
 
