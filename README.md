@@ -16,10 +16,11 @@ The video demo is for sharing your work on your portfolio, but it is also a fall
 
 ## Links (Add your links)
 
-* Code: `<insert Github repository link here>`
+* Code: `<https://github.com/LambdaSchool/ios-pt3-bw1-mortgage-calculator-craig-gavin>`
 * Trello/Github Project Kanban: `<insert trello board here>`
 * Test Flight: `<insert beta signup link here>`
-* YouTube demo video: `<insert video url here>`
+* YouTube demo video: `<https://youtu.be/DgoPtdj5qj8>`
+* Keynote slides: `<https://www.icloud.com/keynote/06AIhtEulsccxSA0QX8FNnB6A#Palm_Mortgage>` 
 
 ## Questions (Answer indented below)
 
