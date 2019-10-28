@@ -16,36 +16,81 @@ The video demo is for sharing your work on your portfolio, but it is also a fall
 
 ## Links (Add your links)
 
-* Code: `<insert Github repository link here>`
+* Code: `<https://github.com/LambdaSchool/ios-pt3-bw1-mortgage-calculator-alex-christian>`
 * Trello/Github Project Kanban: `<insert trello board here>`
-* Test Flight: `<insert beta signup link here>`
-* YouTube demo video: `<insert video url here>`
+* Test Flight: `<insert beta signup link here>`  //We were not added into the Lambda's list for TestFlight.
+* YouTube demo video: `https://www.youtube.com/watch?v=qzG57EYtHT0&feature=youtu.be>`
 
 ## Questions (Answer indented below)
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+`The whole app was very fun to build for us, but we think that the most fun part was creating both calculators.`
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+`We had different obstacles throughout the entire process but, I think the most difficult we had was constraints.`
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+   import UIKit
+   import WebKit
+
+   class BrowserViewController: UIViewController, WKNavigationDelegate {
+       
+       @IBOutlet weak var webKitView: WKWebView!
+       
+       
+
+       override func viewDidLoad() {
+           super.viewDidLoad()
+           
+           webKitView.navigationDelegate = self
+           
+           navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Home Search Options", style: .plain, target: self, action: #selector(openTapped))
+
+           let url = URL(string:"https://Realtor.com")!
+           webKitView.load(URLRequest(url: url))
+           webKitView.allowsBackForwardNavigationGestures = true
+       }
+       
+       @objc func openTapped() {
+           let ac = UIAlertController(title: "Open Page", message: nil, preferredStyle: .actionSheet)
+           ac.addAction(UIAlertAction(title: "Google.com", style: .default, handler: openPage))
+           ac.addAction(UIAlertAction(title: "Realtor.com", style: .default, handler: openPage))
+           ac.addAction(UIAlertAction(title: "Trulia.com", style: .default, handler: openPage))
+           ac.addAction(UIAlertAction(title: "Zillow.com", style: .default, handler: openPage))
+           ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+           ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+           present(ac, animated: true)
+       }
+       
+       func openPage(action: UIAlertAction) {
+           guard let actionTitle = action.title else {return}
+           guard let url = URL(string: "https://" + actionTitle) else {return}
+           webKitView.load(URLRequest(url: url))
+           
+       }
+      
+       func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+           title = webView.title
+       }
+
+   }
+   This code was written to make the Web browser possible.    
+    
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+`How about if I told you that there's an app in the market that will inform you and guide you on the process of getting the house of your dream? Let me tell you all about it...`
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+`The first value is our interest of informing our users how the process work and what to expect from it. The entire app works as one essential step before buying a house.`
   
 6. What are you future goals?
 
-    `<Your answer here>`
+`Being able to add more useful features to the app so it can be used by many users in the future.`
 
 ## Required Slides (Add your Keynote to your PR)
 
